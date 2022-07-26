@@ -1,7 +1,5 @@
-import React from 'react';
-import { fileURLToPath } from 'url';
 import Item from './item';
-import cardapio from './itens.json';
+import cardapio from 'data/cardapio.json';
 import styles from './Itens.module.scss';
 import { useEffect, useState } from 'react';
 
@@ -46,7 +44,7 @@ export default function Itens(props: Props) {
   }, [busca, filtro, ordenador]);
 
   return (
-    <div>
+    <div className={styles.itens}>
       {lista.map(item => (
         <Item key={item.id} {...item} />
       ))}
